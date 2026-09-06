@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Samsung Phones</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root {
+    --color-primary: #0d47a1;
+    --color-primary-light: #5472d3;
+    --color-accent: #ff9800;
+    --color-neutral-light: #f5f5f5;
+    --color-neutral-dark: #333;
+    --font-sans: Arial, Helvetica, sans-serif;
+}
+* { box-sizing: border-box; margin:0; padding:0; }
+body {
+    font-family: var(--font-sans);
+    line-height: 1.6;
+    color: var(--color-neutral-dark);
+}
+a { text-decoration: none; color: inherit; }
+img { max-width: 100%; height: auto; display: block; }
+section { padding: 4rem 1rem; }
+h1, h2 { margin-bottom: 1rem; }
+p { margin-bottom: 1rem; }
+button, .btn {
+    display: inline-block;
+    padding: .75rem 1.5rem;
+    background: var(--color-accent);
+    color:#fff;
+    border:none;
+    cursor:pointer;
+    border-radius:4px;
+    font-size:1rem;
+}
+button:hover, .btn:hover { background: #e68900; }
+.container { max-width:1200px; margin:auto; width:90%; }
+.flex { display:flex; flex-wrap:wrap; gap:1.5rem; }
+.grid { display:grid; gap:1.5rem; }
+@media (min-width:768px){
+    .grid-2 { grid-template-columns: repeat(2,1fr); }
+    .grid-3 { grid-template-columns: repeat(3,1fr); }
+    .grid-4 { grid-template-columns: repeat(4,1fr); }
+}
+.hero {
+    background: var(--color-primary);
+    color:#fff;
+    text-align:center;
+    background-image: url('https://via.placeholder.com/1600x600?text=Samsung+Hero');
+    background-size:cover;
+    background-position:center;
+    position:relative;
+}
+.hero::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.5);
+}
+.hero .content{
+    position:relative;
+    z-index:1;
+    max-width:800px;
+    margin:auto;
+    padding:4rem 1rem;
+}
+.about { background: var(--color-neutral-light); }
+.about .split { display:flex; flex-direction:column; gap:1.5rem; }
+@media (min-width:768px){
+    .about .split { flex-direction:row; }
+}
+.product-card, .category-card, .service-card{
+    background:#fff;
+    border:1px solid #ddd;
+    border-radius:8px;
+    overflow:hidden;
+    display:flex;
+    flex-direction:column;
+}
+.product-card img, .category-card img{ width:100%; height:auto; }
+.product-card .info, .category-card .info{
+    padding:1rem;
+    flex-grow:1;
+}
+.promo-badge{
+    position:absolute;
+    top:10px;
+    left:10px;
+    background:var(--color-accent);
+    color:#fff;
+    padding:0.25rem 0.5rem;
+    font-size:0.75rem;
+    border-radius:4px;
+}
+.product-card .wrapper{ position:relative; }
+.filter-bar{
+    display:flex;
+    flex-wrap:wrap;
+    gap:.5rem;
+    margin-bottom:1rem;
+}
+.filter-bar select, .filter-bar input{
+    padding:.5rem;
+    border:1px solid #ccc;
+    border-radius:4px;
+}
+.pagination{
+    margin-top:2rem;
+    text-align:center;
+}
+.pagination button{
+    background:var(--color-primary);
+    margin:0 .25rem;
+}
+.services-overview .grid-3 .service-card{
+    text-align:center;
+    padding:2rem 1rem;
+}
+.service-card .icon{
+    font-size:2.5rem;
+    margin-bottom:.5rem;
+}
+.testimonial-carousel{
+    overflow-x:auto;
+    white-space: nowrap;
+    padding-bottom:.5rem;
+}
+.testimonial{
+    display:inline-block;
+    width:250px;
+    margin-right:1rem;
+    background:#fff;
+    border:1px solid #ddd;
+    border-radius:8px;
+    padding:1rem;
+}
+form{
+    background:#fff;
+    padding:1.5rem;
+    border:1px solid #ddd;
+    border-radius:8px;
+}
+form .field{
+    margin-bottom:1rem;
+}
+form label{
+    display:block;
+    margin-bottom:.25rem;
+}
+form input, form textarea{
+    width:100%;
+    padding:.5rem;
+    border:1px solid #ccc;
+    border-radius:4px;
+}
+.map{
+    width:100%;
+    height:300px;
+    margin-bottom:1rem;
+}
+footer{
+    background:#222;
+    color:#fff;
+    text-align:center;
+    padding:2rem 1rem;
+}
+</style>
+</head>
+<body>
+
+<header id="hero" class="hero">
+    <div class="content container">
+        <h1>Discover the Future of Connectivity</h1>
+        <p>Explore Samsung’s latest smartphones, engineered for performance, style, and innovation. From flagship powerhouses to budget-friendly options, find the perfect device that fits your lifestyle.</p>
+        <a href="#" class="btn">Shop Now</a>
+    </div>
+</header>
+
+<section id="about" class="about">
+    <div class="container">
+        <h2>Samsung: A Legacy of Innovation</h2>
+        <div class="split">
+            <div class="text">
+                <p>Since 1938, Samsung has been at the forefront of technology, delivering cutting‑edge smartphones that blend design, performance, and reliability. Our phones empower adults to stay connected, productive, and entertained.</p>
+                <a href="#" class="btn">Learn More</a>
+            </div>
+            <div class="image">
+                <img src="https://via.placeholder.com/600x400?text=Samsung+Innovation" alt="Samsung Innovation">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="product_showcase" class="product-showcase" style="background: var(--color-accent); color:#fff;">
+    <div class="container">
+        <h2>Featured Phones</h2>
+        <p>See our top picks for the season—each offering unmatched camera quality, battery life, and sleek design.</p>
+        <div class="grid grid-3">
+            <div class="product-card">
+                <div class="wrapper">
+                    <img src="https://via.placeholder.com/300x200?text=Phone+1" alt="Phone 1">
+                    <div class="promo-badge">Deal</div>
+                </div>
+                <div class="info">
+                    <h3>Galaxy S24</h3>
+                    <p>$999</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="wrapper">
+                    <img src="https://via.placeholder.com/300x200?text=Phone+2" alt="Phone 2">
+                    <div class="promo-badge">New</div>
+                </div>
+                <div class="info">
+                    <h3>Galaxy A54</h3>
+                    <p>$449</p>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="wrapper">
+                    <img src="https://via.placeholder.com/300x200?text=Phone+3" alt="Phone 3">
+                    <div class="promo-badge">Save 10%</div>
+                </div>
+                <div class="info">
+                    <h3>Galaxy Z Flip</h3>
+                    <p>$799</p>
+                </div>
+            </div>
+        </div>
+        <a href="#" class="btn" style="margin-top:1.5rem;">View Deals</a>
+    </div>
+</section>
+
+<section id="shop" class="shop" style="background: var(--color-neutral-light);">
+    <div class="container">
+        <h2>Shop Samsung Phones</h2>
+        <p>Browse our full range of smartphones, filter by features, price, and brand, and add your favorite models to the cart with a single click.</p>
+        <div class="filter-bar">
+            <select>
+                <option>All Categories</option>
+                <option>Flagship</option>
+                <option>Mid‑Range</option>
+                <option>Budget</option>
+            </select>
+            <select>
+                <option>All Prices</option>
+                <option>Under $500</option>
+                <option>$500 - $800</option>
+                <option>Above $800</option>
+            </select>
+            <input type="text" placeholder="Search...">
+        </div>
+        <div class="grid grid-4">
+            <!-- Repeat placeholder product cards -->
+            <div class="product-card">
+                <img src="https://via.placeholder.com/250x150?text=Phone+4" alt="Phone 4">
+                <div class="info">
+                    <h3>Galaxy M53</h3>
+                    <p>$299</p>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/250x150?text=Phone+5" alt="Phone 5">
+                <div class="info">
+                    <h3>Galaxy S24 Ultra</h3>
+                    <p>$1199</p>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/250x150?text=Phone+6" alt="Phone 6">
+                <div class="info">
+                    <h3>Galaxy A34</h3>
+                    <p>$399</p>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="https://via.placeholder.com/250x150?text=Phone+7" alt="Phone 7">
+                <div class="info">
+                    <h3>Galaxy Z Fold</h3>
+                    <p>$1799</p>
+                    <button>Add to Cart</button>
+                </div>
+            </div>
+        </div>
+        <div class="pagination">
+            <button>&laquo; Prev</button>
+            <button>1</button>
+            <button>2</button>
+            <button>Next &raquo;</button>
+        </div>
+    </div>
+</section>
+
+<section id="services_overview" class="services-overview" style="background: var(--color-accent); color:#fff;">
+    <div class="container">
+        <h2>After‑Sales Support You Can Trust</h2>
+        <p>From warranty repairs to software updates, our comprehensive services keep your Samsung phone running smoothly. Our certified technicians and 24/7 support ensure peace of mind.</p>
+        <div class="grid grid-3">
+            <div class="service-card">
+                <div class="icon">🔧</div>
+                <h3>Warranty Repairs</h3>
+                <p>Fast and reliable repairs covered under warranty.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">💾</div>
+                <h3>Software Updates</h3>
+                <p>Stay secure with the latest Android and security patches.</p>
+            </div>
+            <div class="service-card">
+                <div class="icon">📞</div>
+                <h3>24/7 Support</h3>
+                <p>Reach us anytime via phone, chat, or email.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="category_listing" class="category-listing" style="background: var(--color-neutral-light);">
+    <div class="container">
+        <h2>Explore by Category</h2>
+        <p>Choose from flagship, mid‑range, budget, and accessories to find the perfect match for your needs.</p>
+        <div class="grid grid-2">
+            <div class="category-card">
+                <img src="https://via.placeholder.com/600x400?text=Flagship" alt="Flagship">
+                <div class="info"><h3>Flagship</h3></div>
+            </div>
+            <div class="category-card">
+                <img src="https://via.placeholder.com/600x400?text=Mid-Range" alt="Mid-Range">
+                <div class="info"><h3>Mid‑Range</h3></div>
+            </div>
+            <div class="category-card">
+                <img src="https://via.placeholder.com/600x400?text=Budget" alt="Budget">
+                <div class="info"><h3>Budget</h3></div>
+            </div>
+            <div class="category-card">
+                <img src="https://via.placeholder.com/600x400?text=Accessories" alt="Accessories">
+                <div class="info"><h3>Accessories</h3></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="feedback_form" class="feedback-form" style="background: var(--color-accent); color:#fff;">
+    <div class="container">
+        <h2>Share Your Experience</h2>
+        <p>Tell us what you love about Samsung phones and how we can serve you better. Your feedback helps us innovate and improve.</p>
+        <div class="testimonial-carousel">
+            <div class="testimonial">
+                <p>"The camera quality is outstanding!"</p>
+                <strong>- Alex</strong>
+            </div>
+            <div class="testimonial">
+                <p>"Battery lasts all day even with heavy use."</p>
+                <strong>- Maya</strong>
+            </div>
+            <div class="testimonial">
+                <p>"Sleek design and smooth performance."</p>
+                <strong>- Liam</strong>
+            </div>
+        </div>
+        <form>
+            <div class="field">
+                <label for="fb-name">Name</label>
+                <input type="text" id="fb-name" name="name" required>
+            </div>
+            <div class="field">
+                <label for="fb-email">Email</label>
+                <input type="email" id="fb-email" name="email" required>
+            </div>
+            <div class="field">
+                <label for="fb-message">Message</label>
+                <textarea id="fb-message" name="message" rows="4" required></textarea>
+            </div>
+            <button type="submit" class="btn">Submit Feedback</button>
+        </form>
+    </div>
+</section>
+
+<section id="contact_form" class="contact-form" style="background: var(--color-neutral-light);">
+    <div class="container">
+        <h2>Get in Touch</h2>
+        <p>Have questions or need assistance? Reach out to our support team or visit one of our stores. We’re here to help.</p>
+        <div class="flex">
+            <div class="contact-info" style="flex:1;">
+                <p><strong>Phone:</strong> +1 (800) 555‑1234</p>
+                <p><strong>Email:</strong> support@samsung.com</p>
+                <p><strong>Address:</strong> 123 Samsung Way, Tech City, USA</p>
+                <div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.019896896896!2d-122.4013502846815!3d37.78583497975671!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808c2c2c2c2b%3A0x2c2c2c2c2c2c2c2c!2sSamsung%20HQ!5e0!3m2!1sen!2sus!4v1600000000000!5m2!1sen!2sus" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+            <div class="contact-form-wrapper" style="flex:1;">
+                <form>
+                    <div class="field">
+                        <label for="cf-name">Name</label>
+                        <input type="text" id="cf-name" name="name" required>
+                    </div>
+                    <div class="field">
+                        <label for="cf-email">Email</label>
+                        <input type="email" id="cf-email" name="email" required>
+                    </div>
+                    <div class="field">
+                        <label for="cf-subject">Subject</label>
+                        <input type="text" id="cf-subject" name="subject" required>
+                    </div>
+                    <div class="field">
+                        <label for="cf-message">Message</label>
+                        <textarea id="cf-message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>&copy; 2026 Samsung Electronics. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
